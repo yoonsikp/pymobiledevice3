@@ -83,7 +83,7 @@ def restore(
     with tqdm(total=100, dynamic_ncols=True) as pbar:
 
         def update_bar(percentage):
-            pbar.n = percentage
+            pbar.n = round(percentage, 2)
             pbar.refresh()
 
         backup_client.restore(
