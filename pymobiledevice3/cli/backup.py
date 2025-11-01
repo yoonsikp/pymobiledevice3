@@ -46,7 +46,7 @@ def backup(service_provider: LockdownServiceProvider, backup_directory: str, ful
     with tqdm(total=100, dynamic_ncols=True) as pbar:
 
         def update_bar(percentage):
-            pbar.n = percentage
+            pbar.n = round(percentage, 2)
             pbar.refresh()
 
         backup_client.backup(full=full, backup_directory=backup_directory, progress_callback=update_bar)
