@@ -161,7 +161,7 @@ def choose_service_provider(callback: Callable):
 
 
 def is_invoked_for_completion() -> bool:
-    """Returns True if the command is ivoked for autocompletion."""
+    """Returns True if the command is invoked for autocompletion."""
     return any(env.startswith("_") and env.endswith("_COMPLETE") for env in os.environ)
 
 
