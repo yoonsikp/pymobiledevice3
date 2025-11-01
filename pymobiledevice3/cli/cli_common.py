@@ -196,7 +196,7 @@ class LockdownCommand(BaseServiceProviderCommand):
         self.params[:0] = [
             click.Option(
                 ("mobdev2", "--mobdev2"),
-                callback=self.mobdev2,
+                callback=self.mobdev2_option,
                 expose_value=False,
                 default=None,
                 help="Use bonjour browse for mobdev2 devices. Expected value IP address of the interface to "
@@ -204,7 +204,7 @@ class LockdownCommand(BaseServiceProviderCommand):
             ),
             click.Option(
                 ("usbmux", "--usbmux"),
-                callback=self.usbmux,
+                callback=self.usbmux_address,
                 expose_value=False,
                 envvar=USBMUX_ENV_VAR,
                 help=USBMUX_OPTION_HELP,
